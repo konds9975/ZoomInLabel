@@ -1,7 +1,11 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="13122.16" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES" initialViewController="BYZ-38-t0r">
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="14490.70" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES" initialViewController="BYZ-38-t0r">
+    <device id="retina4_0" orientation="portrait">
+        <adaptation id="fullscreen"/>
+    </device>
     <dependencies>
-        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="13104.12"/>
+        <deployment identifier="iOS"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="14490.49"/>
         <capability name="Safe area layout guides" minToolsVersion="9.0"/>
         <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
     </dependencies>
@@ -9,13 +13,56 @@
         <!--View Controller-->
         <scene sceneID="tne-QT-ifu">
             <objects>
-                <viewController id="BYZ-38-t0r" customClass="ViewController" customModuleProvider="target" sceneMemberID="viewController">
+                <viewController id="BYZ-38-t0r" customClass="ViewController" customModule="ZoomInLabel" customModuleProvider="target" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="8bC-Xf-vdC">
-                        <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
+                        <rect key="frame" x="0.0" y="0.0" width="320" height="568"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <scrollView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="hmP-qk-gz4">
+                                <rect key="frame" x="0.0" y="20" width="320" height="548"/>
+                                <subviews>
+                                    <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="Wak-TE-uAy">
+                                        <rect key="frame" x="0.0" y="0.0" width="320" height="548"/>
+                                        <subviews>
+                                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Label" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Sir-gf-DEL">
+                                                <rect key="frame" x="139" y="263.5" width="42" height="21"/>
+                                                <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                                <nil key="textColor"/>
+                                                <nil key="highlightedColor"/>
+                                            </label>
+                                        </subviews>
+                                        <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                        <constraints>
+                                            <constraint firstAttribute="height" constant="548" id="Dx6-C5-b73"/>
+                                            <constraint firstItem="Sir-gf-DEL" firstAttribute="centerX" secondItem="Wak-TE-uAy" secondAttribute="centerX" id="lyU-10-uvR"/>
+                                            <constraint firstItem="Sir-gf-DEL" firstAttribute="centerY" secondItem="Wak-TE-uAy" secondAttribute="centerY" id="t92-7d-rGQ"/>
+                                        </constraints>
+                                    </view>
+                                </subviews>
+                                <constraints>
+                                    <constraint firstAttribute="trailing" secondItem="Wak-TE-uAy" secondAttribute="trailing" id="9PW-Rp-DXT"/>
+                                    <constraint firstItem="Wak-TE-uAy" firstAttribute="leading" secondItem="hmP-qk-gz4" secondAttribute="leading" id="Omr-RD-Hu7"/>
+                                    <constraint firstAttribute="bottom" secondItem="Wak-TE-uAy" secondAttribute="bottom" id="T6t-yP-EKr"/>
+                                    <constraint firstItem="Wak-TE-uAy" firstAttribute="top" secondItem="hmP-qk-gz4" secondAttribute="top" id="Z6M-8f-Ed6"/>
+                                    <constraint firstItem="Wak-TE-uAy" firstAttribute="centerX" secondItem="hmP-qk-gz4" secondAttribute="centerX" id="cvd-VL-6NP"/>
+                                </constraints>
+                            </scrollView>
+                        </subviews>
                         <color key="backgroundColor" red="1" green="1" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                        <constraints>
+                            <constraint firstItem="hmP-qk-gz4" firstAttribute="centerX" secondItem="8bC-Xf-vdC" secondAttribute="centerX" id="6yt-Xh-c7P"/>
+                            <constraint firstItem="6Tk-OE-BBY" firstAttribute="bottom" secondItem="hmP-qk-gz4" secondAttribute="bottom" id="Ag6-ZL-vcL"/>
+                            <constraint firstAttribute="trailing" secondItem="hmP-qk-gz4" secondAttribute="trailing" id="px2-Ub-ya4"/>
+                            <constraint firstItem="hmP-qk-gz4" firstAttribute="leading" secondItem="6Tk-OE-BBY" secondAttribute="leading" id="snq-Re-1SY"/>
+                            <constraint firstItem="hmP-qk-gz4" firstAttribute="top" secondItem="6Tk-OE-BBY" secondAttribute="top" id="xgG-TP-Tc6"/>
+                        </constraints>
                         <viewLayoutGuide key="safeArea" id="6Tk-OE-BBY"/>
                     </view>
+                    <connections>
+                        <outlet property="scrollView" destination="hmP-qk-gz4" id="9X6-Mw-czt"/>
+                        <outlet property="viewToZoom" destination="Wak-TE-uAy" id="9k3-j9-hVh"/>
+                        <outlet property="zoomInLabel" destination="Sir-gf-DEL" id="b1D-nF-22Q"/>
+                    </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="dkx-z0-nzr" sceneMemberID="firstResponder"/>
             </objects>
